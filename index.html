@@ -7,14 +7,15 @@
 </head>
 <body>
     <header>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; justify-content: space-between; align-items: center; min-height: 60px;">
+            <div>
+                <a href="edit.html" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; text-decoration: none; cursor: pointer;">Редагувати статтю</a>
             </div>
-            <!-- Модальне вікно входу -->
-            <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; min-height: 60px;">
+            <div style="display: flex; gap: 10px;">
                 <button id="loginBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Вхід</button>
                 <button id="registerBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Зареєструватися</button>
             </div>
-            </div>
+        </div>
     <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
         <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
             <span id="closeModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
