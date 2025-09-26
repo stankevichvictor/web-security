@@ -8,13 +8,16 @@
 <body>
     <header>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h1 style="margin: 0;">Вразливості відкритих публічних Wi-Fi мереж</h1>
+            </div>
+            <!-- Модальне вікно входу -->
+            <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; min-height: 60px;">
                 <button id="loginBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Вхід</button>
-                <button id="registerBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer; margin-left:10px;">Зареєструватися</button>
-    <!-- Модальне вікно входу -->
+                <button id="registerBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Зареєструватися</button>
+            </div>
+            </div>
     <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
         <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-            <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+            <span id="closeModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
             <h2>Вхід</h2>
             <div style="margin-bottom:10px;">
                 <button id="switchToEmail" style="margin-right:10px;">Email</button>
@@ -36,7 +39,7 @@
     <!-- Модальне вікно реєстрації -->
     <div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
         <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-            <span id="closeRegisterModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+            <span id="closeRegisterModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
             <h2>Реєстрація</h2>
             <form id="registerForm">
                 <input type="text" id="regLogin" placeholder="Логін" required><br>
@@ -146,11 +149,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#intro">Вступ</a></li>
-                    <li><a href="#types">Типи вразливостей</a></li>
-                    <li><a href="#consequences">Наслідки</a></li>
-                    <li><a href="#recommendations">Рекомендації</a></li>
-                    <li><a href="#resources">Ресурси</a></li>
+                    <li><a href="protocol.html">1. Протокольні та інфраструктурні слабкості</a></li>
+                    <li><a href="mitm.html">2. Підміни / MITM / підробні точки доступу</a></li>
+                    <li><a href="devices.html">3. Вразливості пристроїв і сервісів / експлуатація</a></li>
+                    <li><a href="privacy.html">4. Конфіденційність, трекінг і збір даних</a></li>
+                    <li><a href="social.html">5. Фізичні та соціальні атаки / ризики для користувача</a></li>
                 </ul>
             </nav>
     </header>
