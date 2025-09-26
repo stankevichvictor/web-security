@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагування статті</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Редагування статті</h1>
+        <a href="/">На головну</a>
+    </header>
+    <main>
+        <form method="post">
+            <textarea name="content" rows="15" cols="80">{{ article }}</textarea><br>
+            <button type="submit">Зберегти</button>
+        </form>
+    </main>
+</body>
+</html>

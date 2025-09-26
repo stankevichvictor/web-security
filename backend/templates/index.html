@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Вразливості відкритих Wi-Fi мереж</h1>
+        {% if username %}
+        <p>Вітаємо, {{ username }}! <a href="/logout">Вийти</a></p>
+        <a href="/edit">Редагувати статтю</a>
+        {% else %}
+        <a href="/login">Увійти / Зареєструватися</a>
+        {% endif %}
+    </header>
+    <main>
+        <section>
+            <h2>Стаття</h2>
+            <div>{{ article|safe }}</div>
+        </section>
+    </main>
+</body>
+</html>

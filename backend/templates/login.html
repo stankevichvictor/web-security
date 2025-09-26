@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід / Реєстрація</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Вхід / Реєстрація</h1>
+    </header>
+    <main>
+        {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+        <form method="post" action="/login">
+            <input type="text" name="username" placeholder="Логін" required><br>
+            <input type="password" name="password" placeholder="Пароль" required><br>
+            <button type="submit">Увійти</button>
+        </form>
+        <hr>
+        <form method="post" action="/register">
+            <input type="text" name="username" placeholder="Новий логін" required><br>
+            <input type="password" name="password" placeholder="Новий пароль" required><br>
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </main>
+</body>
+</html>
