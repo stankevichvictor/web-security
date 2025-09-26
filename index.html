@@ -2,151 +2,14 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Вразливості відкритих Wi-Fi мереж</title>
+    <title>Index — Вразливості відкритих Wi-Fi мереж</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div style="display: flex; justify-content: space-between; align-items: center; min-height: 60px;">
-            <div>
-                <a href="edit.html" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; text-decoration: none; cursor: pointer;">Редагувати статтю</a>
-            </div>
-            <div style="display: flex; gap: 10px;">
-                <button id="loginBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Вхід</button>
-                <button id="registerBtn" style="background: #2d3e50; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: bold; border: none; cursor: pointer;">Зареєструватися</button>
-            </div>
-        </div>
-    <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-        <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-            <span id="closeModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
-            <h2>Вхід</h2>
-            <div style="margin-bottom:10px;">
-                <button id="switchToEmail" style="margin-right:10px;">Email</button>
-                <button id="switchToLogin">Логін</button>
-            </div>
-            <form id="loginFormEmail">
-                <input type="email" id="email" placeholder="Email" required><br>
-                <input type="password" id="passwordEmail" placeholder="Пароль" required><br>
-                <button type="submit" style="margin-top:10px;">Увійти через Email</button>
-            </form>
-            <form id="loginFormLogin" style="display:none;">
-                <input type="text" id="login" placeholder="Логін" required><br>
-                <input type="password" id="passwordLogin" placeholder="Пароль" required><br>
-                <button type="submit" style="margin-top:10px;">Увійти через Логін</button>
-            </form>
-            <p id="loginError" style="color:red; display:none; margin-top:10px;"></p>
-        </div>
-    </div>
-    <!-- Модальне вікно реєстрації -->
-    <div id="registerModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-        <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-            <span id="closeRegisterModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
-            <h2>Реєстрація</h2>
-            <form id="registerForm">
-                <input type="text" id="regLogin" placeholder="Логін" required><br>
-                <input type="email" id="regEmail" placeholder="Email" required><br>
-                <input type="password" id="regPassword" placeholder="Пароль" required><br>
-                <button type="submit" style="margin-top:10px;">Зареєструватися</button>
-            </form>
-            <p id="registerError" style="color:red; display:none; margin-top:10px;"></p>
-        </div>
-    </div>
-    <script>
-    // Whitelist користувачів (email: пароль, login: пароль)
-    let whitelist = {
-        'admin@example.com': { password: 'adminpass', role: 'admin', login: 'admin' },
-        'user@example.com': { password: 'userpass', role: 'user', login: 'user' },
-        '24d_svo@example.com': { password: '268919', role: 'admin', login: '24d_svo' }
-    };
-    let loginWhitelist = {
-        'admin': { password: 'adminpass', role: 'admin', email: 'admin@example.com' },
-        'user': { password: 'userpass', role: 'user', email: 'user@example.com' },
-        '24d_svo': { password: '268919', role: 'admin', email: '24d_svo@example.com' }
-    };
-    let isAdmin = false;
-    document.getElementById('loginBtn').onclick = function() {
-        document.getElementById('loginModal').style.display = 'flex';
-    };
-    document.getElementById('registerBtn').onclick = function() {
-        document.getElementById('registerModal').style.display = 'flex';
-    };
-    document.getElementById('closeModal').onclick = function() {
-        document.getElementById('loginModal').style.display = 'none';
-        document.getElementById('loginError').style.display = 'none';
-    };
-    document.getElementById('closeRegisterModal').onclick = function() {
-        document.getElementById('registerModal').style.display = 'none';
-        document.getElementById('registerError').style.display = 'none';
-    };
-    document.getElementById('switchToEmail').onclick = function() {
-        document.getElementById('loginFormEmail').style.display = 'block';
-        document.getElementById('loginFormLogin').style.display = 'none';
-    };
-    document.getElementById('switchToLogin').onclick = function() {
-        document.getElementById('loginFormEmail').style.display = 'none';
-        document.getElementById('loginFormLogin').style.display = 'block';
-    };
-    document.getElementById('loginFormEmail').onsubmit = function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('passwordEmail').value.trim();
-        if (whitelist[email] && whitelist[email].password === password) {
-            isAdmin = (whitelist[email].role === 'admin');
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('loginError').style.display = 'none';
-            if (isAdmin) {
-                document.getElementById('adminPanel').style.display = 'block';
-            } else {
-                document.getElementById('adminPanel').style.display = 'none';
-            }
-        } else {
-            document.getElementById('loginError').innerText = 'Невірний email або пароль, або немає доступу.';
-            document.getElementById('loginError').style.display = 'block';
-        }
-    };
-    document.getElementById('loginFormLogin').onsubmit = function(e) {
-        e.preventDefault();
-        const login = document.getElementById('login').value.trim();
-        const password = document.getElementById('passwordLogin').value.trim();
-        if (loginWhitelist[login] && loginWhitelist[login].password === password) {
-            isAdmin = (loginWhitelist[login].role === 'admin');
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('loginError').style.display = 'none';
-            if (isAdmin) {
-                document.getElementById('adminPanel').style.display = 'block';
-            } else {
-                document.getElementById('adminPanel').style.display = 'none';
-            }
-        } else {
-            document.getElementById('loginError').innerText = 'Невірний логін або пароль, або немає доступу.';
-            document.getElementById('loginError').style.display = 'block';
-        }
-    };
-    document.getElementById('registerForm').onsubmit = function(e) {
-        e.preventDefault();
-        const regLogin = document.getElementById('regLogin').value.trim();
-        const regEmail = document.getElementById('regEmail').value.trim();
-        const regPassword = document.getElementById('regPassword').value.trim();
-        if (!regLogin || !regEmail || !regPassword) {
-            document.getElementById('registerError').innerText = 'Всі поля обов’язкові.';
-            document.getElementById('registerError').style.display = 'block';
-            return;
-        }
-        if (whitelist[regEmail] || loginWhitelist[regLogin]) {
-            document.getElementById('registerError').innerText = 'Такий email або логін вже існує.';
-            document.getElementById('registerError').style.display = 'block';
-            return;
-        }
-        whitelist[regEmail] = { password: regPassword, role: 'user', login: regLogin };
-        loginWhitelist[regLogin] = { password: regPassword, role: 'user', email: regEmail };
-        document.getElementById('registerModal').style.display = 'none';
-        document.getElementById('registerError').style.display = 'none';
-        alert('Реєстрація успішна! Тепер увійдіть.');
-    };
-    document.getElementById('editBtn').onclick = function() {
-        alert('Тут має бути функція редагування статті (інтеграція з backend).');
-    };
-    </script>
+        <!-- Верхня панель без кнопок -->
+    <!-- Видалено модальні вікна входу та реєстрації -->
+    <!-- Видалено скрипти для авторизації, реєстрації та редагування статті -->
             </div>
             <nav>
                 <ul>
@@ -163,18 +26,7 @@
                 <h2>Вступ</h2>
                 <p>Відкриті Wi-Fi мережі часто використовуються у громадських місцях, але вони мають багато вразливостей, які можуть загрожувати безпеці ваших даних.</p>
             </section>
-            <div id="adminPanel" style="display:none; text-align:right; margin-bottom:20px;">
-                <button id="editBtn" style="background:#2d3e50; color:#fff; padding:10px 20px; border-radius:4px; font-weight:bold; border:none; cursor:pointer;">Редагувати статтю</button>
-            </div>
-            <!-- Модальне вікно редагування статті -->
-            <div id="editModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1001;">
-                <div style="background:#fff; padding:30px; border-radius:8px; min-width:400px; position:relative;">
-                    <span id="closeEditModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
-                    <h2>Редагування статті</h2>
-                    <textarea id="editArticleText" rows="15" style="width:100%;"></textarea><br>
-                    <button id="saveArticleBtn" style="margin-top:10px;">Зберегти</button>
-                </div>
-            </div>
+            <!-- Видалено панель та модальне вікно редагування статті -->
         <section id="types">
             <h2>Типи вразливостей</h2>
             <ul>
@@ -208,7 +60,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Веб безпека</p>
+    <p>&copy; 2025 Index — Веб безпека</p>
     </footer>
         <!-- Модальне вікно входу -->
         <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
