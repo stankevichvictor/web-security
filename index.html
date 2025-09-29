@@ -6,6 +6,85 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Left vertical topic widget (cards, vertical scrolling) -->
+    <nav class="left-vertical" aria-label="Темы">
+        <div class="lv-inner" role="navigation" aria-label="Темы">
+            <div class="lv-track">
+                <a class="lv-card" href="protocol.html" title="Протокольні слабкості">
+                    <img src="img/how-udp-works.png" alt="Протокол">
+                    <div class="card-body">
+                        <h4>Протокол</h4>
+                        <p>Прості переговори та незашифрований трафік дають змогу перехоплювати дані.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="mitm.html" title="MITM та підміни">
+                    <img src="img/MITM.png" alt="MITM">
+                    <div class="card-body">
+                        <h4>MITM</h4>
+                        <p>Атаки посередника дозволяють змінювати або бачити ваш трафік.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="devices.html" title="Вразливості пристроїв">
+                    <img src="img/iot-devices.png" alt="Пристрої">
+                    <div class="card-body">
+                        <h4>Пристрої</h4>
+                        <p>Старе ПЗ і відкриті порти роблять пристрої легкою ціллю.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="privacy.html" title="Конфіденційність і трекінг">
+                    <img src="img/cookie.png" alt="Приватність">
+                    <div class="card-body">
+                        <h4>Приватність</h4>
+                        <p>Трекери та відкриті мережі збирають інформацію про вас.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="social.html" title="Соціальні атаки">
+                    <img src="img/spoofing.png" alt="Соц атаки">
+                    <div class="card-body">
+                        <h4>Соц</h4>
+                        <p>Фішинг і маніпуляції змушують користувачів розкрити дані.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="lv-track" aria-hidden="true">
+                <a class="lv-card" href="protocol.html" title="Протокольні слабкості">
+                    <img src="img/how-udp-works.png" alt="Протокол">
+                    <div class="card-body">
+                        <h4>Протокол</h4>
+                        <p>Прості переговори та незашифрований трафік дають змогу перехоплювати дані.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="mitm.html" title="MITM та підміни">
+                    <img src="img/MITM.png" alt="MITM">
+                    <div class="card-body">
+                        <h4>MITM</h4>
+                        <p>Атаки посередника дозволяють змінювати або бачити ваш трафік.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="devices.html" title="Вразливості пристроїв">
+                    <img src="img/iot-devices.png" alt="Пристрої">
+                    <div class="card-body">
+                        <h4>Пристрої</h4>
+                        <p>Старе ПЗ і відкриті порти роблять пристрої легкою ціллю.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="privacy.html" title="Конфіденційність і трекінг">
+                    <img src="img/cookie.png" alt="Приватність">
+                    <div class="card-body">
+                        <h4>Приватність</h4>
+                        <p>Трекери та відкриті мережі збирають інформацію про вас.</p>
+                    </div>
+                </a>
+                <a class="lv-card" href="social.html" title="Соціальні атаки">
+                    <img src="img/spoofing.png" alt="Соц атаки">
+                    <div class="card-body">
+                        <h4>Соц</h4>
+                        <p>Фішинг і маніпуляції змушують користувачів розкрити дані.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
     <header>
         <!-- Верхня панель без кнопок -->
     <!-- Видалено модальні вікна входу та реєстрації -->
@@ -22,6 +101,31 @@
             </nav>
     </header>
     <main>
+        <!-- Плаваючі картинки з темами (картинки додасте пізніше) -->
+        <section class="floating-images-section">
+            <div class="floating-images">
+                <div class="floating-image" data-theme="protocol">
+                    <img src="img/how-udp-works.png" alt="Протокольні слабкості">
+                    <span>Протокольні слабкості</span>
+                </div>
+                <div class="floating-image" data-theme="mitm">
+                    <img src="img/MITM.png" alt="MITM та підміни">
+                    <span>MITM та підміни</span>
+                </div>
+                <div class="floating-image" data-theme="devices">
+                    <img src="img/iot-devices.png" alt="Вразливості пристроїв">
+                    <span>Вразливості пристроїв</span>
+                </div>
+                <div class="floating-image" data-theme="privacy">
+                    <img src="img/cookie.png" alt="Конфіденційність і трекінг">
+                    <span>Конфіденційність і трекінг</span>
+                </div>
+                <div class="floating-image" data-theme="social">
+                    <img src="img/spoofing.png" alt="Соціальні атаки">
+                    <span>Соціальні атаки</span>
+                </div>
+            </div>
+        </section>
             <section id="intro">
                 <h2>Вступ</h2>
                 <p>Відкриті Wi-Fi мережі часто використовуються у громадських місцях, але вони мають багато вразливостей, які можуть загрожувати безпеці ваших даних.</p>
@@ -65,5 +169,135 @@
     <footer>
     <p>&copy; 2025 Index — Веб безпека</p>
     </footer>
+    <!-- Bottom floating topic cards: continuous scrolling track -->
+    <section class="bottom-cards" aria-label="Популярні теми">
+        <div class="cards-wrapper">
+            <div class="cards-track">
+                <div class="cards-container">
+                    <a class="topic-card" href="protocol.html">
+                        <img src="img/how-udp-works.png" alt="Протокольні слабкості">
+                        <div class="card-body">
+                            <h3>Протокольні слабкості</h3>
+                            <p>Прості переговори та незашифрований трафік дають змогу перехоплювати дані.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="mitm.html">
+                        <img src="img/MITM.png" alt="MITM та підміни">
+                        <div class="card-body">
+                            <h3>MITM та підміни</h3>
+                            <p>Атаки посередника дозволяють змінювати або бачити ваш трафік.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="devices.html">
+                        <img src="img/iot-devices.png" alt="Вразливості пристроїв">
+                        <div class="card-body">
+                            <h3>Вразливості пристроїв</h3>
+                            <p>Старе ПЗ і відкриті порти роблять пристрої легкою ціллю.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="privacy.html">
+                        <img src="img/cookie.png" alt="Конфіденційність і трекінг">
+                        <div class="card-body">
+                            <h3>Конфіденційність</h3>
+                            <p>Трекери та відкриті мережі збирають інформацію про вас.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="social.html">
+                        <img src="img/spoofing.png" alt="Соціальні атаки">
+                        <div class="card-body">
+                            <h3>Соціальні атаки</h3>
+                            <p>Фішинг і маніпуляції змушують користувачів розкрити дані.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- duplicated for seamless loop -->
+                <div class="cards-container" aria-hidden="true">
+                    <a class="topic-card" href="protocol.html">
+                        <img src="img/how-udp-works.png" alt="Протокольні слабкості">
+                        <div class="card-body">
+                            <h3>Протокольні слабкості</h3>
+                            <p>Прості переговори та незашифрований трафік дають змогу перехоплювати дані.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="mitm.html">
+                        <img src="img/MITM.png" alt="MITM та підміни">
+                        <div class="card-body">
+                            <h3>MITM та підміни</h3>
+                            <p>Атаки посередника дозволяють змінювати або бачити ваш трафік.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="devices.html">
+                        <img src="img/iot-devices.png" alt="Вразливості пристроїв">
+                        <div class="card-body">
+                            <h3>Вразливості пристроїв</h3>
+                            <p>Старе ПЗ і відкриті порти роблять пристрої легкою ціллю.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="privacy.html">
+                        <img src="img/cookie.png" alt="Конфіденційність і трекінг">
+                        <div class="card-body">
+                            <h3>Конфіденційність</h3>
+                            <p>Трекери та відкриті мережі збирають інформацію про вас.</p>
+                        </div>
+                    </a>
+                    <a class="topic-card" href="social.html">
+                        <img src="img/spoofing.png" alt="Соціальні атаки">
+                        <div class="card-body">
+                            <h3>Соціальні атаки</h3>
+                            <p>Фішинг і маніпуляції змушують користувачів розкрити дані.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Інтерактивність для плаваючих картинок: hover і клік для навігації
+        document.querySelectorAll('.floating-image').forEach(function(el){
+            el.addEventListener('click', function(){
+                var theme = el.getAttribute('data-theme');
+                if(theme === 'protocol') location.href = 'protocol.html';
+                if(theme === 'mitm') location.href = 'mitm.html';
+                if(theme === 'devices') location.href = 'devices.html';
+                if(theme === 'privacy') location.href = 'privacy.html';
+                if(theme === 'social') location.href = 'social.html';
+            });
+            el.addEventListener('mouseenter', function(){
+                el.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', function(){
+                el.classList.remove('hover');
+            });
+        });
+    // No close button for continuous track — anchors handle navigation
+        // Ensure scrolling animation starts immediately (fix for some browsers that delay animation until repaint/tab switch)
+        (function(){
+            function restartTrack(){
+                var track = document.querySelector('.cards-track');
+                if(!track) return;
+                // reset animation to force repaint
+                track.style.animation = 'none';
+                // reading offsetWidth forces reflow
+                void track.offsetWidth;
+                track.style.animation = 'scrollLeft 22s linear infinite';
+            }
+            // Restart on DOM ready and window load
+            document.addEventListener('DOMContentLoaded', restartTrack);
+            window.addEventListener('load', restartTrack);
+            // Also restart after all images inside track have loaded
+            var track = document.querySelector('.cards-track');
+            if(track){
+                var imgs = track.querySelectorAll('img');
+                if(imgs.length > 0){
+                    var count = 0;
+                    imgs.forEach(function(img){
+                        if(img.complete) { count++; }
+                        else img.addEventListener('load', function(){ count++; if(count === imgs.length) restartTrack(); });
+                    });
+                    if(count === imgs.length) restartTrack();
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
