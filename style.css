@@ -1,3 +1,18 @@
+/* Admin panel styles from inline */
+.admin-panel {
+    display: none;
+    text-align: right;
+    margin-bottom: 20px;
+}
+.edit-btn {
+    background: #2d3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
 body {
     font-family: Arial, sans-serif;
     background: #fff;
