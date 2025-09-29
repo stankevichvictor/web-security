@@ -8,10 +8,10 @@
 <body>
     <header>
         </div>
-    <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-        <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-            <span id="closeModal" style="position:absolute; top:8px; right:12px; cursor:pointer; font-size:22px; color:#888; font-weight:bold;">&#10006;</span>
-            <p id="loginError" style="color:red; display:none; margin-top:10px;"></p>
+    <div id="loginModal" class="modal-bg">
+        <div class="modal-content modal-small">
+            <span id="closeModal" class="modal-close modal-close-small">&#10006;</span>
+            <p id="loginError" class="error-message"></p>
         </div>
     </div>
     </script>
@@ -31,16 +31,16 @@
                 <h2>Вступ</h2>
                 <p>Відкриті Wi-Fi мережі часто використовуються у громадських місцях, але вони мають багато вразливостей, які можуть загрожувати безпеці ваших даних.</p>
             </section>
-            <div id="adminPanel" style="display:none; text-align:right; margin-bottom:20px;">
-                <button id="editBtn" style="background:#2d3e50; color:#fff; padding:10px 20px; border-radius:4px; font-weight:bold; border:none; cursor:pointer;">Редагувати статтю</button>
+            <div id="adminPanel" class="admin-panel">
+                <button id="editBtn" class="edit-btn">Редагувати статтю</button>
             </div>
             <!-- Модальне вікно редагування статті -->
-            <div id="editModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1001;">
-                <div style="background:#fff; padding:30px; border-radius:8px; min-width:400px; position:relative;">
-                    <span id="closeEditModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+            <div id="editModal" class="modal-bg modal-edit">
+                <div class="modal-content modal-large">
+                    <span id="closeEditModal" class="modal-close">&times;</span>
                     <h2>Редагування статті</h2>
-                    <textarea id="editArticleText" rows="15" style="width:100%;"></textarea><br>
-                    <button id="saveArticleBtn" style="margin-top:10px;">Зберегти</button>
+                    <textarea id="editArticleText" rows="15" class="full-width"></textarea><br>
+                    <button id="saveArticleBtn" class="save-btn">Зберегти</button>
                 </div>
             </div>
         <section id="types">
@@ -79,18 +79,7 @@
         <p>&copy; 2025 Веб безпека</p>
     </footer>
         <!-- Модальне вікно входу -->
-        <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-            <div style="background:#fff; padding:30px; border-radius:8px; min-width:300px; position:relative;">
-                <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
-                <h2>Вхід</h2>
-                <form id="loginForm">
-                    <input type="email" id="email" placeholder="Email" required><br>
-                    <input type="password" id="password" placeholder="Пароль" required><br>
-                    <button type="submit" style="margin-top:10px;">Увійти</button>
-                </form>
-                <p id="loginError" style="color:red; display:none; margin-top:10px;"></p>
-            </div>
-        </div>
+    <!-- Модальне вікно входу перенесено стилі у style.css -->
         <script>
         // Whitelist користувачів (email: пароль)
         const whitelist = {
