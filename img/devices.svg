@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="100%" height="100%" fill="none" />
+  <!-- Phone -->
+  <rect x="30" y="50" width="70" height="110" rx="12" fill="#f5f7fa" stroke="#2d3e50" stroke-width="2" />
+  <circle cx="65" cy="150" r="4" fill="#2d3e50" />
+  <!-- Laptop -->
+  <rect x="150" y="70" width="120" height="80" rx="8" fill="#fff" stroke="#2d3e50" stroke-width="2" />
+  <rect x="170" y="90" width="80" height="40" rx="4" fill="#f5f7fa" />
+  <!-- Tablet -->
+  <rect x="290" y="60" width="70" height="100" rx="10" fill="#f0f4f8" stroke="#2d3e50" stroke-width="2" />
+  <!-- Warning icons -->
+  <g fill="#f39c12">
+    <circle cx="60" cy="70" r="10" />
+    <path d="M58 64 L62 64 L60 76 z" fill="#fff" />
+    <circle cx="220" cy="90" r="10" />
+    <path d="M218 84 L222 84 L220 96 z" fill="#fff" />
+    <circle cx="340" cy="80" r="10" />
+    <path d="M338 74 L342 74 L340 86 z" fill="#fff" />
+  </g>
+  <text x="200" y="200" font-family="Arial" font-size="16" fill="#2d3e50">Вразливості пристроїв</text>
+</svg>
